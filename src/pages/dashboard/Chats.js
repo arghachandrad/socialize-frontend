@@ -164,7 +164,7 @@ const Chats = () => {
         <Stack
           spacing={2}
           direction="column"
-          sx={{ flexGrow: 1, overflow: "scroll", height: "100%" }}
+          sx={{ flexGrow: 1, overflow: "scroll", height: "100%", px: 1.5 }}
         >
           <SimpleBarStyle timeout={500} clickOnTrack={false}>
             <Stack spacing={2.4}>
@@ -172,7 +172,7 @@ const Chats = () => {
                 Pinned
               </Typography>
               {ChatList.filter((chat) => chat.pinned).map((chat) => (
-                <ChatElement {...chat} />
+                <ChatElement key={chat.id} {...chat} />
               ))}
             </Stack>
 
@@ -181,7 +181,7 @@ const Chats = () => {
                 All Chats
               </Typography>
               {ChatList.filter((chat) => !chat.pinned).map((chat) => (
-                <ChatElement {...chat} />
+                <ChatElement key={chat.id} {...chat} />
               ))}
             </Stack>
           </SimpleBarStyle>
